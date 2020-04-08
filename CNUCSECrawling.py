@@ -1,4 +1,5 @@
 import requests
+import os
 from bs4 import BeautifulSoup
 
 # 지정 url
@@ -35,3 +36,5 @@ print('\n')
 print('\n***사업단공지***\n')
 crawling(Saupdan_url)
 print('\n')
+
+os.system("pause")
