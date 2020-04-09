@@ -31,8 +31,8 @@
   ('CNUCSECrawling',
    'C:\\Users\\Free\\Desktop\\공지보기귀찮아\\CNUCSECrawling.py',
    'PYSOURCE'),
-  ('python37.dll', 'c:\\python3.7.5\\python37.dll', 'BINARY'),
   ('VCRUNTIME140.dll', 'c:\\python3.7.5\\VCRUNTIME140.dll', 'BINARY'),
+  ('python37.dll', 'c:\\python3.7.5\\python37.dll', 'BINARY'),
   ('select', 'c:\\python3.7.5\\DLLs\\select.pyd', 'EXTENSION'),
   ('_socket', 'c:\\python3.7.5\\DLLs\\_socket.pyd', 'EXTENSION'),
   ('_ssl', 'c:\\python3.7.5\\DLLs\\_ssl.pyd', 'EXTENSION'),
@@ -57,7 +57,7 @@
  [],
  False,
  False,
- 1586335679,
+ 1586406347,
  [('run.exe',
    'c:\\python3.7.5\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',
    'EXECUTABLE')])
