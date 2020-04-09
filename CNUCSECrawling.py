@@ -1,3 +1,10 @@
+# /**
+#  * @author [Limm-jk]
+#  * @email [201602057@cs-cnu.org]
+#  * @create date 2020-04-09 13:37:25
+#  * @modify date 2020-04-09 13:37:25
+#  * @desc [충남대학교 컴퓨터공학과 공지 크롤러 '이제누가공지해주냐']
+#  */
 import requests
 import os
 from bs4 import BeautifulSoup
