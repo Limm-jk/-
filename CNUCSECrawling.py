@@ -60,12 +60,32 @@ def title_crawling(url):
     return title_arr
 
 
-def crawling(url):
+def crawling2(url):
     title_arr = title_crawling(url)
     date_arr = date_crawl(url)
     for i in range(len(title_arr)):
         print(title_arr[i])
         print("->업데이트 날짜 : ",date_arr[i])
+
+def crawling(url):
+    arr = []
+    # url 객체 생성
+    response = requests.get(url)
+
+    #웹 소스코드 추출
+    html = response.text
+
+    # print(html) #소스코드 확인
+
+    #소스코드를 파이썬 객체로 변환
+    soup = BeautifulSoup(html, 'html.parser')
+    links = soup.findAll('div', {"class":"b-title-box"})
+
+    for link in links:
+        arr.append([link.find("a").text.strip(), link.find("span",{"class":"b-date"}).text.strip()])
+    for i in range(len(arr)):
+        print(arr[i][0])
+        print("->업데이트 날짜 : ",arr[i][1])
 
 
 print('\n***학사공지***\n')

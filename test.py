@@ -21,12 +21,18 @@ soup = BeautifulSoup(html, 'html.parser')
 links = soup.findAll("p", {"class":"b-new"})
 # print(type(links))
 
+arr =[]
 
 for link in links:
     # print(type(link.parent))
     entity = link.parent.parent
-    print(entity.find("a").text.strip())
-    print(entity.find("span",{"class":"b-date"}).text.strip())
+    # print(entity.find("a").text.strip())
+    arr.append([entity.find("a").text.strip(),entity.find("span",{"class":"b-date"}).text.strip()])
+
+print(arr)
+result = sorted(arr, key = lambda x : x[1], reverse = True)
+print(result)
+
     
 
 # links = soup.select('div')
