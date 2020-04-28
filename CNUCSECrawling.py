@@ -67,6 +67,11 @@ def crawling2(url):
         print(title_arr[i])
         print("->업데이트 날짜 : ",date_arr[i])
 
+def printer(arr):
+    for i in range(len(arr)):
+        print(arr[i][0])
+        print("->업데이트 날짜 : ",arr[i][1])
+
 def crawling(url):
     arr = []
     # url 객체 생성
@@ -81,12 +86,18 @@ def crawling(url):
     soup = BeautifulSoup(html, 'html.parser')
     links = soup.findAll('div', {"class":"b-title-box"})
 
+    new_links = soup.findAll("p", {"class":"b-new"})
+
     for link in links:
         arr.append([link.find("a").text.strip(), link.find("span",{"class":"b-date"}).text.strip()])
-    for i in range(len(arr)):
-        print(arr[i][0])
-        print("->업데이트 날짜 : ",arr[i][1])
+    printer(arr)
 
+    for link in new_links:
+        entity = link.parent.parent
+        new_arr.append([entity.find("a").text.strip(),entity.find("span",{"class":"b-date"}).text.strip()])
+
+
+new_arr = []
 
 print('\n***학사공지***\n')
 crawling(haksa_url)
@@ -96,6 +107,10 @@ crawling(ilban_url)
 print('\n')
 print('\n***사업단공지***\n')
 crawling(Saupdan_url)
+print('\n')
+print('\n***최근 공지***\n')
+result = sorted(new_arr, key = lambda x : x[1], reverse = True)
+printer(result)
 print('\n')
 
 os.system("pause")

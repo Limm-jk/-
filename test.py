@@ -24,9 +24,7 @@ links = soup.findAll("p", {"class":"b-new"})
 arr =[]
 
 for link in links:
-    # print(type(link.parent))
     entity = link.parent.parent
-    # print(entity.find("a").text.strip())
     arr.append([entity.find("a").text.strip(),entity.find("span",{"class":"b-date"}).text.strip()])
 
 print(arr)
