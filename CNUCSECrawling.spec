@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['CNUCSECrawling.py'],
-             pathex=['C:\\Users\\Free\\Desktop\\공지보기귀찮아'],
+             pathex=['C:\\Users\\Free\\Desktop\\오늘의 크롤링~\\공지보기귀찮아'],
              binaries=[],
              datas=[],
              hiddenimports=[],
