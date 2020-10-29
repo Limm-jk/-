@@ -99,18 +99,22 @@ def crawling(url):
 
 new_arr = []
 
-print('\n***학사공지***\n')
-crawling(haksa_url)
-print('\n')
-print('\n***일반공지***\n')
-crawling(ilban_url)
-print('\n')
-print('\n***사업단공지***\n')
-crawling(Saupdan_url)
-print('\n')
-print('\n***최근 공지***\n')
-result = sorted(new_arr, key = lambda x : x[1], reverse = True)
-printer(result)
-print('\n')
+def __main__():
+    print('\n***학사공지***\n')
+    crawling(haksa_url)
+    print('\n')
+    print('\n***일반공지***\n')
+    crawling(ilban_url)
+    print('\n')
+    print('\n***사업단공지***\n')
+    crawling(Saupdan_url)
+    print('\n')
+    print('\n***최근 공지***\n')
+    result = sorted(new_arr, key = lambda x : x[1], reverse = True)
+    printer(result)
+    print('\n')
 
-os.system("pause")
+    os.system("pause")
+
+if __name__ == '__main__':
+    __main__()
