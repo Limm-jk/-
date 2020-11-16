@@ -100,19 +100,29 @@ def crawling(url):
 new_arr = []
 
 def __main__():
-    print('\n***학사공지***\n')
-    crawling(haksa_url)
-    print('\n')
-    print('\n***일반공지***\n')
-    crawling(ilban_url)
-    print('\n')
-    print('\n***사업단공지***\n')
-    crawling(Saupdan_url)
-    print('\n')
-    print('\n***최근 공지***\n')
-    result = sorted(new_arr, key = lambda x : x[1], reverse = True)
-    printer(result)
-    print('\n')
+    try:
+        print('\n***학사공지***\n')
+        crawling(haksa_url)
+        print('\n')
+        print('\n***일반공지***\n')
+        crawling(ilban_url)
+        print('\n')
+        print('\n***사업단공지***\n')
+        crawling(Saupdan_url)
+        print('\n')
+        print('\n***최근 공지***\n')
+        result = sorted(new_arr, key = lambda x : x[1], reverse = True)
+        printer(result)
+        print('\n')
+    
+    # 인증서 오류
+    except requests.exceptions.SSLError as e:
+        print('신뢰할 수 없는 사이트입니다.\n', e)
+    # 사이트 연결 오류
+    except requests.exceptions.ConnectionError as e:
+        print('연결할 수 없는 사이트입니다. url에 오류가 없는 지, 사이트가 정상 작동하는 지 확인해주세요.\n', e)
+    except Exception as e:
+        print('오류가 발생했습니다.\n', e)
 
     os.system("pause")
 
