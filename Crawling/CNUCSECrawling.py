@@ -114,6 +114,7 @@ def __main__():
         print('\n')
         print('\n***취업정보***\n')
         crawling(offer_url)
+        print('\n')
         print('\n***최근 공지***\n')
         result = sorted(new_arr, key = lambda x : x[1], reverse = True)
         printer(result)
