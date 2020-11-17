@@ -10,9 +10,11 @@ import os
 from bs4 import BeautifulSoup
 
 # 지정 url
-Saupdan_url = 'https://computer.cnu.ac.kr/computer/notice/project.do'
-ilban_url = 'https://computer.cnu.ac.kr/computer/notice/notice.do'
-haksa_url = 'https://computer.cnu.ac.kr/computer/notice/bachelor.do'
+notice = 'https://computer.cnu.ac.kr/computer/notice/'
+Saupdan_url = notice + 'project.do'
+ilban_url = notice + 'notice.do'
+haksa_url = notice + 'bachelor.do'
+offer_url = notice + 'job.do'
 
 def date_crawl(url):
     date_arr = []
@@ -110,6 +112,8 @@ def __main__():
         print('\n***사업단공지***\n')
         crawling(Saupdan_url)
         print('\n')
+        print('\n***취업정보***\n')
+        crawling(offer_url)
         print('\n***최근 공지***\n')
         result = sorted(new_arr, key = lambda x : x[1], reverse = True)
         printer(result)
